@@ -29,12 +29,62 @@
 #hello {
   margin: 0;
   font-weight: bolder;
-  font-size: 5rem;
-  padding-bottom: 7px;
+  font-size: 7rem;
+  padding-bottom: 10px;
 }
 
 #occupation {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   float: right;
+}
+
+#gooseArrow {
+  align-self: center;
+  padding-bottom: 5%;
+  border: 2px solid green;
+  height: 30%;
+  max-width: 40%;
+}
+
+.gooseAnimation {
+  object-fit: cover;
+  animation: rotation 2s infinite linear;
+  padding-left: 37.5%;
+  transform-origin: 80%;
+  max-width: 40%;
+}
+
+#goosePoint {
+  font-size: 1.4rem;
+  rotate: 35deg;
+  padding-top: 17%;
+}
+
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(9deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-9deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 897px) {
+  #contentRight {
+    display: none;
+  }
+
+  #hello {
+    font-size: 3.5rem;
+  }
 }
