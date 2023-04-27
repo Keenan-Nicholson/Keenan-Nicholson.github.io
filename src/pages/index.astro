@@ -30,4 +30,24 @@ import { Image } from "@astrojs/image/components";
     </div>
   </div>
 </div>
-<div class="page">hello</div>
+<div class="page">
+  <div id="contentBottomLeft"></div>
+  <div id="contentBottomRight">
+    <div id="emailForm">
+      <div id="emailFormContents">
+        <h1 id="contactMe">Contact me:</h1>
+        <form action="https://formspree.io/f/mbjeqnll" method="POST">
+          <label>
+            Enter your email:
+            <input type="email" name="email" />
+          </label>
+          <label>
+            Leave me a message:
+            <textarea name="message"></textarea>
+          </label>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
