@@ -27,7 +27,7 @@
 }
 
 #nameOccupationDiv {
-  margin: 0;
+  margin: 5%;
   align-self: center;
   /* border: 2px solid white; */
 }
@@ -52,8 +52,8 @@
   align-self: flex-end;
   /* border: 2px solid green; */
   overflow: visible;
-  width: 40%;
-  height: 40%;
+  width: 35rem;
+  height: 35rem;
   padding: 6% 6% 6% 6%;
 }
 
@@ -81,10 +81,11 @@
 #emailForm {
   display: flex;
   justify-content: center;
+  align-self: center;
   border: 2px solid white;
   border-radius: 20px;
-  max-width: 50;
-  width: 35%;
+  height: 32rem;
+  width: 32rem;
   padding: 0% 10% 7% 10%;
 }
 
@@ -158,6 +159,7 @@ a:hover {
   text-align: center;
   margin-top: 2%;
 }
+
 @keyframes rotation {
   0% {
     -webkit-transform: rotate(0deg);
@@ -176,12 +178,31 @@ a:hover {
   }
 }
 
-@media (max-width: 897px) {
+@media (max-width: 1600px) {
   #contentRight {
     display: none;
   }
 
   #hello {
     font-size: 3.5rem;
+  }
+
+  #emailForm {
+    width: 300px;
+    margin: 10px 10px 10px 10px;
+  }
+
+  #emailForm label,
+  #emailForm input[type="email"],
+  #emailForm label,
+  #emailForm textarea,
+  #emailForm button {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 2190px) {
+  #occupation {
+    float: left;
   }
 }
