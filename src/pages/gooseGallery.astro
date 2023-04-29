@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+function* chunks(arr, n) {
+  for (let i = 0; i < arr.length; i += n) {
+    yield arr.slice(i, i + n);
+  }
+}
+const gooseImages = [
+  "goose38",
+  "goose37",
+  "goose36",
+  "goose4",
+  "goose2",
+  "goose1",
+  "goose3",
+  "goose5",
+  "goose25",
+  "goose7",
+  "goose8",
+  "goose9",
+  "goose17",
+  "goose18",
+  "goose19",
+  "goose20",
+  "goose21",
+  "goose22",
+  "goose23",
+  "goose24",
+  "goose12",
+  "goose13",
+  "goose14",
+  "goose12",
+  "goose15",
+  "goose16",
+  "goose35",
+  "goose34",
+  "goose33",
+  "goose32",
+  "goose30",
+  "goose31",
+  "goose29",
+  "goose27",
+  "goose28",
+  "goose6",
+  "goose26",
+  "goose10",
+];
+const chunkedImages = [...chunks(gooseImages, 3)];
+---
+
+<main>
+  <Layout title="Keenan Nicholson - Goose Gallery">
+    <p id="homeButtonGooseGallery"><a href="./">Home</a></p>
+    <div class="wrapper">
+      <div class="content">
+        {
+          chunkedImages.map((gooseImages) => (
+            <div>
+              {gooseImages.map((gooseImage) => (
+                <div class="imgContainer">
+                  <Image
+                    src={import(
+                      /* @vite-ignore */ `../images/${gooseImage}.jpeg`
+                    )}
+                    alt=""
+                  />
+                </div>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Layout>
+</main>
