@@ -1,6 +1,7 @@
 .page {
   margin: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   background-color: #000000;
   color: white;
@@ -15,21 +16,16 @@
 #contentBottomRight {
   margin: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  width: 100%;
+  width: 49.89%;
   height: 100%;
-  /* border: 2px solid red; */
-}
-
-#contentRight {
-  justify-content: flex-end;
+  border: 2px solid red;
 }
 
 #nameOccupationDiv {
-  margin: 5%;
+  margin: 14.5%;
   align-self: center;
-  /* border: 2px solid white; */
+  border: 2px solid white;
 }
 
 #hello {
@@ -46,10 +42,8 @@
 }
 
 #gooseArrowDiv {
-  margin-bottom: 10%;
-  margin-right: 10%;
   position: relative;
-  align-self: flex-end;
+  align-self: center;
   /* border: 2px solid green; */
   overflow: visible;
   width: 35rem;
@@ -60,8 +54,8 @@
 .gooseAnimation {
   position: absolute;
   object-fit: cover;
-  animation: rotation 2s infinite linear;
-  transform-origin: 80%;
+  animation: rotation 1.75s infinite linear;
+  transform-origin: 55%;
   right: 32%;
   top: 0;
 }
@@ -76,6 +70,16 @@
 
 #arrow {
   margin-top: 30%;
+}
+
+#aboutContentDiv {
+  align-self: center;
+  max-width: 70%;
+  height: 30rem;
+}
+
+#about {
+  font-size: 2rem;
 }
 
 #emailForm {
@@ -178,18 +182,50 @@ a:hover {
   }
 }
 
-@media (max-width: 1600px) {
-  #contentRight {
-    display: none;
+@media (max-width: 2190px) {
+  #contentLeft,
+  #contentRight,
+  #contentBottomLeft,
+  #contentBottomRight {
+    width: 49.8%;
+  }
+  #occupation {
+    float: left;
+  }
+
+  #nameOccupationDiv {
+    margin: 0%;
   }
 
   #hello {
-    font-size: 3.5rem;
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 1600px) {
+  #contentLeft,
+  #contentRight,
+  #contentBottomLeft,
+  #contentBottomRight {
+    width: 100%;
+  }
+
+  #hello {
+    font-size: 4.5rem;
   }
 
   #emailForm {
-    width: 300px;
+    width: 250px;
     margin: 10px 10px 10px 10px;
+    padding-bottom: 0;
+  }
+
+  #arrow {
+    display: none;
+  }
+
+  #gooseArrowDiv {
+    width: 250px;
   }
 
   #emailForm label,
@@ -197,12 +233,23 @@ a:hover {
   #emailForm label,
   #emailForm textarea,
   #emailForm button {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
-}
 
-@media (max-width: 2190px) {
-  #occupation {
-    float: left;
+  #contactMe {
+    font-size: 2.2rem;
+  }
+  #emailForm textarea {
+    height: 130px;
+  }
+
+  .gooseAnimation {
+    right: auto;
+  }
+
+  #goosePoint_P_Tag {
+    bottom: 15%;
+    rotate: 20deg;
+    left: auto;
   }
 }
