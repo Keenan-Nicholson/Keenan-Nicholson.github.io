@@ -125,6 +125,10 @@ button {
   cursor: pointer;
 }
 
+#emailForm textarea {
+  height: 130px;
+}
+
 #emailForm button:hover {
   opacity: 0.8;
 }
@@ -159,6 +163,11 @@ a:hover {
   opacity: 0.8;
 }
 
+.socials {
+  font-size: 3rem;
+  padding-right: 10px;
+}
+
 #homeButtonGooseGallery {
   text-align: center;
   margin-top: 2%;
@@ -191,10 +200,12 @@ a:hover {
   }
   #occupation {
     float: left;
+    padding-bottom: 15px;
   }
 
   #nameOccupationDiv {
     margin: 0%;
+    width: 475px;
   }
 
   #hello {
@@ -238,9 +249,6 @@ a:hover {
 
   #contactMe {
     font-size: 2.2rem;
-  }
-  #emailForm textarea {
-    height: 130px;
   }
 
   .gooseAnimation {
