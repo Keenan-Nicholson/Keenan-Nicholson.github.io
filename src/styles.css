@@ -45,7 +45,7 @@
 #gooseArrowDiv {
   position: absolute;
   align-self: flex-end;
-  /* border: 2px solid green; */
+  border: 2px solid green;
   width: 20rem;
   height: 20rem;
   padding: 5% 5% 5% 5%;
@@ -57,14 +57,16 @@
   object-fit: cover;
   animation: rotation 1.75s infinite linear;
   transform-origin: 55%;
-  left: 100px;
-  bottom: 150px;
+  left: 150px;
+  bottom: 200px;
+  width: 200px;
 }
 
 #arrow {
   position: relative;
-  bottom: 150px;
+  bottom: 235px;
   height: 190px;
+  left: 20px;
 }
 
 #goosePoint_P_Tag {
