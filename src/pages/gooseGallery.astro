@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles.css";
 import { Image } from "@astrojs/image/components";
 function* chunks(arr, n) {
   for (let i = 0; i < arr.length; i += n) {
@@ -51,7 +52,7 @@ const chunkedImages = [...chunks(gooseImages, 3)];
 
 <main>
   <Layout title="Keenan Nicholson - Goose Gallery">
-    <p id="homeButtonGooseGallery"><a href="./">Home</a></p>
+    <p id="homeButtonGooseGallery"><a href="../index">Home</a></p>
     <div class="wrapper">
       <div class="content">
         {
