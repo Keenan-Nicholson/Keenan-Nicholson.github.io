@@ -23,7 +23,6 @@
 #nameOccupationDiv {
   position: relative;
   bottom: 0;
-  margin: 14.5%;
   align-self: center;
   /* border: 2px solid white; */
 }
@@ -31,7 +30,7 @@
 #hello {
   margin: 0;
   font-weight: bolder;
-  font-size: 4.7rem;
+  font-size: 5rem;
 }
 
 #occupation {
@@ -144,6 +143,15 @@ a:hover {
   }
   100% {
     -webkit-transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 1450px) {
+  #nameOccupationDiv {
+    margin: 25%;
+  }
+  #occupation {
+    position: relative;
   }
 }
 
