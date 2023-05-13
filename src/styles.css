@@ -15,6 +15,7 @@
   margin: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 49.89%;
   height: 100%;
   /* border: 2px solid red; */
@@ -42,45 +43,39 @@
 }
 
 #gooseArrowDiv {
-  position: absolute;
+  display: flex;
+  flex-direction: column;
   align-self: flex-end;
   /* border: 2px solid green; */
-  width: 20rem;
-  height: 20rem;
-  padding: 5% 5% 5% 5%;
-  margin-left: 400px;
+  width: auto;
+  height: auto;
+  padding: 0% 5% 0% 5%;
+  margin-right: 100px;
+  margin-bottom: 30px;
 }
 
 .gooseAnimation {
-  position: relative;
   object-fit: cover;
   animation: rotation 1.75s infinite linear;
   transform-origin: 55%;
-  left: 200px;
-  bottom: 100px;
   width: 150px;
+  margin-left: 200px;
 }
 
 #arrow {
-  position: relative;
   bottom: 140px;
   height: 175px;
-  left: 60px;
+  margin-left: 100px;
 }
 
 #goosePoint_P_Tag {
-  position: absolute;
   font-size: 1.4rem;
   rotate: 35deg;
-  bottom: 15%;
-  left: 0;
 }
 
 #aboutContentDiv {
-  margin-top: 27%;
-  margin-right: 20%;
-  max-width: 75%;
-  height: 20rem;
+  max-width: 100%;
+  height: auto;
   /* border: 2px solid blue; */
 }
 
@@ -146,19 +141,25 @@ a:hover {
   }
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1750px) {
   #nameOccupationDiv {
     margin: 25%;
   }
   #occupation {
     position: relative;
   }
+  #about {
+    font-size: 1.2rem;
+  }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1450px) {
   #contentLeft,
   #contentRight {
     width: 100%;
+  }
+  #contentRight {
+    flex-wrap: wrap;
   }
 
   #hello {
@@ -177,10 +178,7 @@ a:hover {
   }
 
   #about {
-    font-size: 2rem;
-  }
-  #arrow {
-    display: none;
+    font-size: 1.5rem;
   }
 
   #gooseArrowDiv {
