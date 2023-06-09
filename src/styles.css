@@ -48,8 +48,8 @@
   align-self: flex-end;
   /* border: 2px solid green; */
   margin-left: -175px;
-  margin-right: 25px;
-  margin-bottom: 15px;
+  margin-right: 55px;
+  margin-bottom: 30px;
 }
 
 .gooseAnimation {
@@ -79,7 +79,7 @@
 }
 
 #about {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .imgContainer {
