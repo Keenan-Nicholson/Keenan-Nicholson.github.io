@@ -7,7 +7,6 @@
   color: white;
   max-width: 100%;
   height: 100vh;
-  /* border: 2px solid white; */
 }
 
 #contentLeft,
@@ -18,14 +17,12 @@
   align-items: center;
   width: 49.89%;
   height: 100%;
-  /* border: 2px solid red; */
 }
 
 #nameOccupationDiv {
   position: relative;
   bottom: 0;
   align-self: center;
-  /* border: 2px solid white; */
 }
 
 #hello {
@@ -46,10 +43,9 @@
   display: flex;
   flex-direction: column;
   align-self: flex-end;
-  /* border: 2px solid green; */
   margin-left: -175px;
   margin-right: 45px;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 
 .gooseAnimation {
@@ -70,12 +66,12 @@
 #goosePoint_P_Tag {
   font-size: 1.4rem;
   rotate: 35deg;
+  width: fit-content;
 }
 
 #aboutContentDiv {
   max-width: 100%;
   height: auto;
-  /* border: 2px solid blue; */
 }
 
 #about {
