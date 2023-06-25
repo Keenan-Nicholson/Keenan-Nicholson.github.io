@@ -80,8 +80,9 @@
 
 .imgContainer {
   float: left;
-  margin-left: 2rem;
-  margin-top: 3rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-top: 2rem;
 }
 
 .imgContainer img {
