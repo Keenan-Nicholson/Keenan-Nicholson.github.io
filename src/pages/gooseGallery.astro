@@ -8,6 +8,7 @@ function* chunks(arr, n) {
   }
 }
 const gooseImages = [
+  "goose48",
   "goose47",
   "goose42",
   "goose43",
@@ -74,6 +75,7 @@ const chunkedImages = [...chunks(gooseImages, 3)];
                       /* @vite-ignore */ `../images/${gooseImage}.jpeg`
                     )}
                     alt=""
+                    loading="lazy"
                   />
                 </div>
               ))}
