@@ -106,6 +106,7 @@ a {
   text-decoration: none;
   color: white;
 }
+
 a:hover {
   opacity: 0.8;
 }
