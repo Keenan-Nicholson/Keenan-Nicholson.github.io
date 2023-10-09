@@ -14,9 +14,6 @@ const gooseImages = [
   "goose56",
   "goose55",
   "goose54",
-  "goose56",
-  "goose55",
-  "goose54",
   "goose53",
   "goose52",
   "goose51",
@@ -86,7 +83,7 @@ const chunkedImages = [...chunks(gooseImages, 3)];
                 <div class="imgContainer">
                   <Image
                     src={import(
-                      /* @vite-ignore */ `../images/${gooseImage}.jpeg`
+                      /* @vite-ignore goose54*/ `../images/${gooseImage}.jpeg`
                     )}
                     alt=""
                     loading="lazy"
