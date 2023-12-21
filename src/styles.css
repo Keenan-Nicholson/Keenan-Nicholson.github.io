@@ -73,6 +73,7 @@
 #aboutContentDiv {
   max-width: 100%;
   height: auto;
+  margin-top: 40px;
 }
 
 #about {
