@@ -8,8 +8,6 @@ function* chunks(arr, n) {
   }
 }
 const gooseImages = [
-  "goose71",
-  "goose70",
   "goose69",
   "goose68",
   "goose67",
@@ -94,11 +92,11 @@ const chunkedImages = [...chunks(gooseImages, 3)];
               {gooseImages.map((gooseImage) => (
                 <div class="imgContainer">
                   <Image
-                    src={import(
-                      /* @vite-ignore goose54*/ `../images/${gooseImage}.jpeg`
-                    )}
+                    src={`http://pics.pirated.tech/images/${gooseImage}.jpeg`}
                     alt=""
                     loading="lazy"
+                    width="500"
+                    height="500"
                   />
                 </div>
               ))}
