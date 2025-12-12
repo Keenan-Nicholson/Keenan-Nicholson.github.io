@@ -1,0 +1,104 @@
+/* Global styles */
+:root {
+  --bg: #fefae0;
+  --text: #2a2a2a;
+  --max-width: 700px; /* nice readable width */
+  --padding: 1.25rem;
+  background-color: var(--bg);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  padding: var(--padding);
+  margin-top: 1rem;
+}
+
+.layout-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centered responsive container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Images */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+.hiscore-link {
+  display: flex;
+  align-items: center;
+  margin-top: -2rem;
+}
+
+.hiscore-link p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.hiscore-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+/* Hover: scale up */
+.hiscore-img:hover {
+  transform: scale(1.2);
+}
+
+/* Click animation: spin */
+.hiscore-img.spin {
+  animation: spin 0.5s ease-in-out;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Slightly nicer layout on larger screens */
+@media (min-width: 768px) {
+  body {
+    padding: 2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
