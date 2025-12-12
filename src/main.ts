@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Navigate to link in new tab — works on iOS Safari
       window.open(link.href, "_blank");
-    }, 200); // match CSS animation duration
+    }, 550);
   });
 });
