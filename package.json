@@ -1,23 +1,15 @@
 {
-  "name": "@example/basics",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "keenan-nicholson-github-io",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/image": "^0.11.1",
-    "astro": "^1.9.2",
-    "sharp": "^0.31.2",
-    "three": "^0.151.3"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.5.5"
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
   }
 }
