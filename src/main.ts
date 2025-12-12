@@ -1,5 +1,4 @@
-import "./styles/main.css";
-
+import "./style.css";
 document.addEventListener("DOMContentLoaded", () => {
   const hiscoreImg = document.querySelector<HTMLImageElement>(".hiscore-img");
 
