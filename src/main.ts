@@ -10,15 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const link = hiscoreImg.parentElement as HTMLAnchorElement | null;
     if (!link) return;
 
-    // Add spin + scale animation
     hiscoreImg.classList.add("spin");
 
-    // Remove class after animation duration (hard-coded 500ms)
     setTimeout(() => {
       hiscoreImg.classList.remove("spin");
 
-      // Navigate to link in new tab — works on iOS Safari
       window.open(link.href, "_blank");
-    }, 550);
+    }, 500);
   });
 });
