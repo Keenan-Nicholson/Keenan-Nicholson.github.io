@@ -38,7 +38,7 @@ if (pile) {
     img.style.maxWidth = `${40 + Math.random() * 20}%`;
 
     // random small rotation
-    img.style.transform = `rotate(${Math.random() * 10 - 5}deg)`; // -5° to +5°
+    img.style.transform = `rotate(${Math.random() * 20 - 10}deg)`; // -10° to +10°
 
     // slight overlap
     img.style.marginTop = `${Math.random() * -20}px`; // negative margin up to 20px

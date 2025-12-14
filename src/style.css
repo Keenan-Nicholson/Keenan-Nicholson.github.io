@@ -122,10 +122,11 @@ img {
 }
 
 .pile img {
-  position: relative; /* allows small nudges */
+  position: relative;
   transition: transform 0.2s;
   cursor: default;
   border-radius: 0;
+  object-fit: cover;
 }
 
 .goose-link {
