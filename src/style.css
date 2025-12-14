@@ -139,7 +139,7 @@ img {
   transition: transform 0.2s;
   cursor: pointer;
   margin-left: 6rem;
-  margin-top: -3rem;
+  margin-top: -1rem;
   z-index: 999;
   border-radius: 50%;
 }
