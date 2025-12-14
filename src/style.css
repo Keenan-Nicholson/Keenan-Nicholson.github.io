@@ -66,11 +66,12 @@ img {
 }
 
 .hiscore-img {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   transition: transform 0.2s;
   cursor: pointer;
+  z-index: 999;
 }
 
 /* Hover: scale up */
@@ -83,12 +84,90 @@ img {
   animation: spin 0.5s ease-in-out;
 }
 
+.hotwheels-img {
+  width: 256px;
+  height: 256px;
+  object-fit: contain;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.hotwheels-img:hover {
+  transform: scale(1.2);
+}
+
+.hotwheels-link {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  margin-top: -3rem;
+  padding-left: 1.5rem;
+  margin-bottom: -2rem;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.pile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  position: relative;
+  margin-top: 6rem;
+}
+
+.pile img {
+  position: relative; /* allows small nudges */
+  transition: transform 0.2s;
+  cursor: default;
+  border-radius: 0;
+}
+
+.goose-link {
+  display: flex;
+  align-items: center;
+}
+.goose-img {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  transition: transform 0.2s;
+  cursor: pointer;
+  margin-left: 6rem;
+  margin-top: -3rem;
+  z-index: 999;
+  border-radius: 50%;
+}
+.goose-img:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.home-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+}
+
+.home-button a {
+  font-size: 45px;
+}
+
+@media (min-width: 700px) {
+  .pile img {
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 700px) {
+  .pile img {
+    max-width: 30%;
   }
 }
 
