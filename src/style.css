@@ -1,8 +1,7 @@
-/* Global styles */
 :root {
   --bg: #fefae0;
   --text: #2a2a2a;
-  --max-width: 700px; /* nice readable width */
+  --max-width: 700px;
   --padding: 1.25rem;
   background-color: var(--bg);
 }
@@ -18,22 +17,13 @@ body {
   color: var(--text);
   line-height: 1.6;
   padding: var(--padding);
-  margin-top: 1rem;
 }
 
-.layout-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Centered responsive container */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
-/* Typography */
 h1,
 h2,
 h3 {
@@ -45,24 +35,25 @@ p {
   margin-bottom: 1rem;
 }
 
-/* Images */
+a {
+  color: inherit;
+}
+
 img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1rem 0;
-  border-radius: 6px;
+}
+
+/* Hiscore */
+.hiscore-line {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .hiscore-link {
-  display: flex;
-  align-items: center;
-  margin-top: -2rem;
-}
-
-.hiscore-link p {
-  margin: 0;
-  font-size: 1rem;
+  display: inline-flex;
 }
 
 .hiscore-img {
@@ -71,54 +62,60 @@ img {
   object-fit: contain;
   transition: transform 0.2s;
   cursor: pointer;
-  z-index: 999;
 }
 
-/* Hover: scale up */
 .hiscore-img:hover {
   transform: scale(1.2);
 }
 
-/* Click animation: spin */
-.hiscore-img.spin {
-  animation: spin 0.5s ease-in-out;
+/* Hot Wheels - big and chaotic */
+.hotwheels-link {
+  display: block;
+  margin: 1rem 0;
 }
 
 .hotwheels-img {
   width: 256px;
   height: 256px;
   object-fit: contain;
-  transition: transform 0.2s;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   cursor: pointer;
+  transform: rotate(-3deg);
 }
 
 .hotwheels-img:hover {
-  transform: scale(1.2);
+  transform: rotate(5deg) scale(1.15);
 }
 
-.hotwheels-link {
+/* Dog tax */
+.dog-tax {
   display: flex;
   align-items: center;
-  height: fit-content;
-  margin-top: -3rem;
-  padding-left: 1.5rem;
-  margin-bottom: -2rem;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.goose-img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
 }
+
+.goose-img:hover {
+  transform: scale(1.1) rotate(8deg);
+}
+
+/* Goose gallery page */
 .pile {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
   position: relative;
-  margin-top: 6rem;
+  margin-top: 4rem;
+  padding: 0 1rem;
 }
 
 .pile img {
@@ -129,41 +126,14 @@ img {
   object-fit: cover;
 }
 
-.goose-link {
-  display: flex;
-  align-items: center;
-}
-.goose-img {
-  width: 128px;
-  height: 128px;
-  object-fit: contain;
-  transition: transform 0.2s;
-  cursor: pointer;
-  margin-left: 6rem;
-  margin-top: -1rem;
-  z-index: 999;
-  border-radius: 50%;
-}
-.goose-img:hover {
-  transform: scale(1.05);
-  z-index: 10;
-}
-
 .home-button {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   left: 1rem;
   z-index: 1000;
-}
-
-.home-button a {
-  font-size: 45px;
-}
-
-@media (min-width: 700px) {
-  .pile img {
-    max-width: 30%;
-  }
+  font-size: 2rem;
+  text-decoration: none;
+  line-height: 1;
 }
 
 @media (min-width: 700px) {
@@ -172,13 +142,8 @@ img {
   }
 }
 
-/* Slightly nicer layout on larger screens */
 @media (min-width: 768px) {
   body {
     padding: 2rem;
-  }
-
-  .container {
-    padding: 0 1rem;
   }
 }

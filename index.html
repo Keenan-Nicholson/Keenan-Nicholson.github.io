@@ -3,12 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/keeborg.png" />
+    <link rel="icon" type="image/png" href="/keeborg.png" />
     <title>keenans cool</title>
   </head>
-  <body class="layout-column">
-    <div id="app" class="container">
-
+  <body>
+    <main class="container">
       <header>
         <h1>Hi &#x1F44B;</h1>
         <h2>I'm Keenan</h2>
@@ -17,41 +16,42 @@
       <p>Scaper of runes and petter of dogs.</p>
       <p>
         By day I am a Senior Programmer Analyst with the Government of
-        Newfoundland and Labrador. By night, I am tinkering with my home lab, playing D&D or hanging with my best bud, Goose.
+        Newfoundland and Labrador. By night, I am tinkering with my home lab,
+        playing D&amp;D or hanging with my best bud, Goose.
       </p>
 
-      <div class="hiscore-link">
-        <p>Check out my OSRS hiscores here -></p>
+      <p class="hiscore-line">
+        Check out my OSRS hiscores
         <a
+          class="hiscore-link"
           href="https://secure.runescape.com/m=hiscore_oldschool/hiscorepersonal?user1=keeborg"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/keeborg.gif" alt="osrs guy wavin'" class="hiscore-img" />
+          <img src="/keeborg.gif" alt="OSRS character waving" class="hiscore-img" />
         </a>
-      </div>
+      </p>
 
-      <p>or see if I have added any new cars to my underwhelming Hot Wheels collection.</p>
-      <div class="hotwheels-link">
-        <a
-          href="https://collecthw.com/collection/user/17190"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/hotwheels.svg" alt="Hot Wheels logo" class="hotwheels-img" />
-        </a>
-    </div>
-
-    <p>Dog tax:</p>
-    <div class="goose-link">
-      <a href="/goose.html">
-        <img class="goose-img"
-          src="/goober.png"
-          alt="A happy golden retriever"
-      />
+      <a
+        class="hotwheels-link"
+        href="https://collecthw.com/collection/user/17190"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/hotwheels.svg" alt="Hot Wheels logo" class="hotwheels-img" />
       </a>
 
-    </div>
+      <section class="dog-tax">
+        <p>Dog tax:</p>
+        <a href="/goose.html">
+          <img
+            class="goose-img"
+            src="/goober.png"
+            alt="A happy golden retriever"
+          />
+        </a>
+      </section>
+    </main>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

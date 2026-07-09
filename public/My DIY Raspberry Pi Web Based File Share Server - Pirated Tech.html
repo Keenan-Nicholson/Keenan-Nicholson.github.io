@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en-us" data-theme="dark"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="My%20DIY%20Raspberry%20Pi%20Web%20Based%20File%20Share%20Server%20-%20Pirated%20Tech_files/livereload.js" data-no-instant="" defer="defer"></script>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>My DIY Raspberry Pi Web Based File Share Server - Pirated Tech</title>
+
+<meta name="description" content="
+
+    
+        #
+    
+    Introduction
+
+
+If you belong to the group of people who can say, “I bought a Raspberry Pi years ago just because they’re cool but I have no real use for it,” then you are not alone — there is at least one other member 👋.
+When not being used to host experimental Discord bots, my Raspberry Pi 4B has largely sits around collecting dust. I probably should migrate most of my software from my home server (a Lenovo ThinkStation P330 Tiny) to my Pi, as I would like that computer to be a dedicated media server. But I often find myself unplugging, moving, or corrupting the operating system with experiments on my Pi, so here it sits, practically unused year-round.">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="http://localhost:1313/favicon.png">
+
+
+
+
+
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="My%20DIY%20Raspberry%20Pi%20Web%20Based%20File%20Share%20Server%20-%20Pirated%20Tech_files/style.935970ad3f7d891fdd807213df87181f3541370c60f733bc8fbef1.css" integrity="sha256-k1lwrT99iR/dgHIT34cYHzVBNwxg9zO8j77xqcBn2DY=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="My%20DIY%20Raspberry%20Pi%20Web%20Based%20File%20Share%20Server%20-%20Pirated%20Tech_files/style.9c1888ebff42c0224ce04dac10cb2c401f1b77f54f78e8d87d73c3.css" integrity="sha256-nBiI6/9CwCJM4E2sEMssQB8bd/VPeOjYfXPDvteBwmM=">
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="My%20DIY%20Raspberry%20Pi%20Web%20Based%20File%20Share%20Server%20-%20Pirated%20Tech_files/style.acd606c0fce58853afe0248d37bb41acbbcdd8b1aca2412b6c0fa7.css" integrity="sha256-rNYGwPzliFOv4CSNN7tBrLvN2LGsokErbA+nYNoBN/M=">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <script src="My%20DIY%20Raspberry%20Pi%20Web%20Based%20File%20Share%20Server%20-%20Pirated%20Tech_files/script.672e2309c296e07c18bcd08b28d797a56222ff941d65f308fba315.js" type="text/javascript" charset="utf-8" integrity="sha256-Zy4jCcKW4HwYvNCLKNeXpWIi/5QdZfMI+6MVjESIWxQ="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</head>
+<body style="visibility: visible; opacity: 1;">
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="http://localhost:1313/">Pirated Tech</a>
+</h1>
+
+        
+
+
+
+
+
+
+
+    
+        <div class="theme-switcher">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z"></path><path d="M6.343 17.657l-1.414 1.414"></path><path d="M6.343 6.343l-1.414 -1.414"></path><path d="M17.657 6.343l1.414 -1.414"></path><path d="M17.657 17.657l1.414 1.414"></path><path d="M4 12h-2"></path><path d="M12 4v-2"></path><path d="M20 12h2"></path><path d="M12 20v2"></path></svg>
+
+
+</span>
+
+        </div>
+    
+
+    <script>
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "light"
+
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
+    </script>
+
+
+        <ul class="social-icons noselect">
+
+
+
+
+
+
+
+    <li>
+            <a href="http://localhost:1313/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M4 4a16 16 0 0 1 16 16"></path><path d="M4 11a9 9 0 0 1 9 9"></path></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
+    </div>
+    <div class="header-top-right">
+
+    </div>
+</div>
+
+
+    <nav></nav>
+
+
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title draft">My DIY Raspberry Pi Web Based File Share Server</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2026-01-02">2026-01-02</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="http://localhost:1313/posts/my-diy-pi/">/posts/my-diy-pi/</a>
+    <a href="http://localhost:1313/" class="p-name p-author post-hidden-author h-card" rel="me">map[name:Keeborg]</a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    
+                    <li><a href="http://localhost:1313/categories/mini-post/">Mini Post</a></li>
+                
+            </ul>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#inspiration">Inspiration</a>
+      <ul>
+        <li><a href="#to-ftp-or-not-ftp">To FTP or Not FTP</a></li>
+      </ul>
+    </li>
+    <li><a href="#enough-is-enough-unless-you-are-talking-storage-space">Enough is Enough. Unless You Are Talking Storage Space.</a></li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li><a href="#future-plans">Future Plans</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
+<script>
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
+</script>
+
+        <div class="content e-content">
+            <h2 id="introduction">
+<div>
+    <a href="#introduction">
+        #
+    </a>
+    Introduction
+</div>
+</h2>
+<p>If you belong to the group of people who can say, “I bought a 
+Raspberry Pi years ago just because they’re cool but I have no real use 
+for it,” then you are not alone — there is at least one other member 👋.</p>
+<p>When not being used to host experimental Discord bots, my Raspberry 
+Pi 4B has largely sits around collecting dust. I probably should migrate
+ most of my software from my home server (a Lenovo ThinkStation P330 
+Tiny) to my Pi, as I would like that computer to be a dedicated media 
+server. But I often find myself unplugging, moving, or corrupting the 
+operating system with experiments on my Pi, so here it sits, practically
+ unused year-round.</p>
+<h2 id="inspiration">
+<div>
+    <a href="#inspiration">
+        #
+    </a>
+    Inspiration
+</div>
+</h2>
+<p>Recently, I have been frustrated with trying to send files to 
+friends. It seems there is no solution that satisfies everyone: Discord 
+limits file size when you do not pay for Nitro; emailing often limits 
+attachments to just a couple of MB; Dropbox, Google Drive, etc., exist, 
+but moving the content and creating a shareable link can be a pain and 
+is limited to 15GB (for Google at least). The final straw was when I 
+wanted to send a simple document for my D&amp;D campaign to some friends
+ but was met with the “file size too large” warning. I thought, “Ugh, I 
+should just spin up my own FTP server or something.”</p>
+<h3 id="to-ftp-or-not-ftp">
+<div>
+    <a href="#to-ftp-or-not-ftp">
+        ##
+    </a>
+    To FTP or Not FTP
+</div>
+</h3>
+<p>I figured, why not breathe some life back into the old Pi, and threw a
+ new install of Raspberry Pi OS Lite on it. At first, I tried to get a 
+working SFTP server running, but as I soon came to find out, I didn’t <em>really</em> know what an FTP server was or what it was meant to do. I just thought, “The name implies I can transfer files, that <em>is</em> what I want to do, so it <em>should</em>
+ work… right?” I was experiencing a very common problem in tech: I knew 
+what I wanted, I just didn’t know the language to describe it.</p>
+<p>After consulting some (much more intelligent) friends, I concluded 
+that I did not need SFTP, or any form of FTP server. What I wanted was 
+simply, what I like to call, a <strong>web-based private file share</strong>.</p>
+<p>After a bit of Googling, I found <a href="https://filebrowser.org/index.html">File Browser</a> and very easily got it running on my Pi via Docker.</p>
+<h2 id="enough-is-enough-unless-you-are-talking-storage-space">
+<div>
+    <a href="#enough-is-enough-unless-you-are-talking-storage-space">
+        #
+    </a>
+    Enough is Enough. Unless You Are Talking Storage Space.
+</div>
+</h2>
+<p>I hesitate to call this an issue because, in reality, I am going to 
+be the only person using this, and I will likely just delete the content
+ once the other person has downloaded it. But alas, my Pi only came with
+ a 128GB micro SSD. I wanted <em>more</em>, because why not?</p>
+<p>I knew I had a 1TB Seagate external HDD I bought years ago to back up
+ an old laptop, so I went to my basement and dug it out of a box, 
+plugged it in, and mounted it to my Pi. Et VOILA! … My Pi couldn’t power
+ it, and I somehow cratered my OS, or locked out my user, or unmounted 
+the wrong drive, or something — all I know is I broke something.</p>
+<p>I was not giving up, and I was not spending money on a Raspberry Pi 
+SATA hat, a bigger power supply, or any other rational solution. 
+Instead, I found a <a href="https://www.amazon.ca/dp/B07X91YGG1?ref=ppx_yo2ov_dt_b_fed_asin_title">cheap powered USB dock</a> on Amazon and daisy-chained them together.</p>
+<br>
+<br>
+<img src="My%20DIY%20Raspberry%20Pi%20Web%20Based%20File%20Share%20Server%20-%20Pirated%20Tech_files/diy-pi.jpg" alt="DIY Pi setup" width="400">
+<h2 id="conclusion">
+<div>
+    <a href="#conclusion">
+        #
+    </a>
+    Conclusion
+</div>
+</h2>
+<p>I honestly didn’t really expect this to work, although why wouldn’t 
+it? I am telling myself it is not a long-term solution, but if I know 
+myself, I know it will stay like this until I am forced to change it for
+ one reason or another. Either way, I now have a 1TB Raspberry Pi 
+web-based private file share server.</p>
+<h3 id="future-plans">
+<div>
+    <a href="#future-plans">
+        ##
+    </a>
+    Future Plans
+</div>
+</h3>
+<p>I have wanted to tinker with Kubernetes for a while now, and with my recent purchase of a <a href="https://ca.store.bambulab.com/products/a1?srsltid=AfmBOooqlYKJgMrSGGkjS_q9lNXTBycp6dl9kCK5i6qJnf5X4NAxhAvP">Bambu Lab A1 3D Printer</a>, I am even more inspired to buy two more Raspberry Pi boards and mount them in a 3D-printed mini-rack.</p>
+
+        </div>
+
+    </article>
+
+    
+    
+
+    
+        
+        
+    
+
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            ©  Keeborg,  2026
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href="http://localhost:1313/" class="p-name u-url url fn" rel="me">map[name:Keeborg]</a>
+
+    
+
+    
+</p>
+
+</footer>
+
+        
+    </div>
+
+
+</body></html>
